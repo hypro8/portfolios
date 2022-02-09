@@ -1,16 +1,33 @@
-/*
-=============== 
-Fonts
-===============
+/* fonts */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh7USSwiPHA.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wWw.ttf)
+    format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJfedw.ttf)
+    format("truetype");
+}
+/* 
+====== 
+Variables 
+======
 */
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
-
-/*
-=============== 
-Variables
-===============
-*/
-
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(184, 91%, 17%);
@@ -45,12 +62,11 @@ Variables
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-/*
-=============== 
-Global Styles
-===============
+/* 
+====== 
+Global Styles 
+======
 */
-
 * {
   margin: 0;
   padding: 0;
@@ -73,10 +89,6 @@ img:not(.nav-logo) {
   width: 100%;
   display: block;
 }
-/* img {
-  width: 100%;
-  display: block;
-} */
 h1,
 h2,
 h3,
@@ -125,27 +137,7 @@ p {
     line-height: 1;
   }
 }
-/*  global classes */
-
-.btn {
-  text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-white);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  /* font-weight: 700; */
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-.btn:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-8);
-}
-/* section */
+/* global classes */
 .section {
   padding: 5rem 0;
 }
@@ -169,13 +161,142 @@ p {
     width: 95vw;
   }
 }
-
+/* buttons */
+.btn {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  font-size: 0.875rem;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  /* font-weight: 700; */
+  transition: var(--transition);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.btn:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+}
 /*
 =============== 
-Hero
+Navbar
 ===============
 */
-
+/* add :not(.nav-logo) to img */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  z-index: 2;
+}
+.nav-icons {
+  display: none;
+}
+.nav-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.nav-toggle {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav-toggle:hover {
+  transform: scale(1.2);
+}
+.nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+  color: var(--clr-grey-1);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.nav-link:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+  padding-left: 2.25rem;
+}
+/* nav toggle functionality */
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 280px;
+}
+/* nav at bigger screen size */
+@media screen and (min-width: 992px) {
+  /* hide nav toggle button */
+  .nav-toggle {
+    display: none;
+  }
+  /* show links */
+  .nav-links {
+    height: auto;
+    display: flex;
+  }
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* optional */
+    flex-wrap: wrap;
+  }
+  .nav-header {
+    padding: 0 0;
+  }
+  .nav-link {
+    padding: 0 0;
+  }
+  .nav-link:hover {
+    padding: 0;
+    color: var(--clr-primary-5);
+    background: transparent;
+  }
+  .nav-icons {
+    display: flex;
+  }
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .nav-link {
+    margin-right: 0.7rem;
+  }
+  .nav-icon {
+    margin-right: 0.7rem;
+    color: var(--clr-primary-5);
+    font-size: 1.2rem;
+    transition: var(--transition);
+  }
+  .nav-icon:hover {
+    color: var(--clr-primary-8);
+  }
+}
+/* set hero to 
+min-height:calc(100vh - 62px);
+*/
+/* Hero section */
 .hero {
   min-height: 100vh;
   background: var(--clr-primary-5);
@@ -211,8 +332,8 @@ Hero
 }
 @media screen and (min-width: 768px) {
   .hero {
-    background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
-      url("../images/main.jpeg") center/cover no-repeat;
+    background: linear-gradient(#2caeba, rgba(0, 0, 0, 0.7)),
+      url("../images/main.jpeg") center / cover no-repeat;
   }
   .hero-banner {
     padding: 0;
@@ -221,35 +342,27 @@ Hero
     max-width: 45rem;
   }
 }
-/*
-=============== 
-About
-===============
-*/
-/* section added to globals */
-/* title added to globals */
-/* section center added to globals */
+/* About section */
 .about-img,
 .about-info {
   margin-bottom: 2rem;
 }
-
 @media screen and (min-width: 992px) {
   .about-center {
     /* flex parent */
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
   }
   .about-img,
   .about-info {
     /* children */
     flex: 0 0 calc(50% - 2rem);
-    align-self: center;
     margin-bottom: 0;
   }
 }
 @media screen and (min-width: 1170px) {
+  /* ! before是添加第一个child，after是添加最后一个child, 两者有很大区别 */
   .about-img::before {
     content: "";
     position: absolute;
@@ -260,7 +373,6 @@ About
     top: -1.5rem;
     left: -1.5rem;
   }
-
   .about-img {
     position: relative;
   }
@@ -268,11 +380,7 @@ About
     position: relative;
   }
 }
-/*
-=============== 
-Services
-===============
-*/
+/* Services section */
 .services {
   background: var(--clr-grey-10);
 }
@@ -293,7 +401,6 @@ Services
   margin-left: auto;
   margin-right: auto;
 }
-
 @media screen and (min-width: 576px) {
   .services-center {
     display: flex;
@@ -327,13 +434,7 @@ Services
     margin-bottom: 0.5rem;
   }
 }
-
-/*
-=============== 
-Featured Tours
-===============
-*/
-
+/* Featured section */
 .tour-card {
   transition: var(--transition);
   background: var(--clr-grey-10);
@@ -471,12 +572,7 @@ Contact
     max-width: 100%;
   }
 }
-/*
-=============== 
-Gallery
-===============
-*/
-
+/* Gallery section */
 .gallery-img-container {
   position: relative;
   background: var(--clr-primary-5);
@@ -558,120 +654,3 @@ Footer
   letter-spacing: var(--spacing);
   color: var(--clr-white);
 }
-/*
-=============== 
-Navbar
-===============
-*/
-/* add :not(.nav-logo) to img */
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--clr-white);
-  box-shadow: var(--dark-shadow);
-  z-index: 2;
-}
-.nav-icons {
-  display: none;
-}
-.nav-center {
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-}
-.nav-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-.nav-toggle {
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 1.5rem;
-  color: var(--clr-primary-5);
-  cursor: pointer;
-  transition: var(--transition);
-}
-.nav-toggle:hover {
-  transform: scale(1.2);
-}
-.nav-link {
-  display: block;
-  padding: 1rem 2rem;
-  text-transform: capitalize;
-  letter-spacing: var(--spacing);
-  transition: var(--transition);
-  color: var(--clr-grey-1);
-  cursor: pointer;
-  font-size: 1rem;
-}
-.nav-link:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-8);
-  padding-left: 2.25rem;
-}
-/* nav toggle functionality */
-.nav-links {
-  height: 0;
-  overflow: hidden;
-  transition: var(--transition);
-}
-.show-links {
-  height: 280px;
-}
-/* nav at bigger screen size */
-@media screen and (min-width: 992px) {
-  /* hide nav toggle button */
-  .nav-toggle {
-    display: none;
-  }
-  /* show links */
-  .nav-links {
-    height: auto;
-    display: flex;
-  }
-  .nav-center {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* optional */
-    flex-wrap: wrap;
-  }
-  .nav-header {
-    padding: 0 0;
-  }
-  .nav-link {
-    padding: 0 0;
-  }
-  .nav-link:hover {
-    padding: 0;
-    color: var(--clr-primary-5);
-    background: transparent;
-  }
-  .nav-icons {
-    display: flex;
-  }
-  .navbar {
-    padding: 1rem 2rem;
-  }
-  .nav-link {
-    margin-right: 0.7rem;
-  }
-  .nav-icon {
-    margin-right: 0.7rem;
-    color: var(--clr-primary-5);
-    font-size: 1.2rem;
-    transition: var(--transition);
-  }
-  .nav-icon:hover {
-    color: var(--clr-primary-8);
-  }
-}
-/* set hero to 
-min-height:calc(100vh - 62px);
-*/
