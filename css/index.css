@@ -1,24 +1,27 @@
 /* fonts */
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh7USSwiPHA.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh7USSwiPHA.ttf)
+    format("truetype");
 }
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wWw.ttf)
+    format("truetype");
 }
 @font-face {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJfedw.ttf)
+    format("truetype");
 }
 /* 
 ====== 
@@ -67,9 +70,7 @@ Global Styles
 html {
   font-size: 100%;
 }
-*,
-::before,
-::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -218,7 +219,8 @@ p {
 }
 @media screen and (min-width: 768px) {
   .hero {
-    background: linear-gradient(#2caeba, rgba(0, 0, 0, 0.7)), url("../images/main.jpeg") center / cover no-repeat;
+    background: linear-gradient(#2caeba, rgba(0, 0, 0, 0.7)),
+      url("../images/main.jpeg") center / cover no-repeat;
   }
   .hero-banner {
     padding: 0;
