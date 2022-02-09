@@ -1,27 +1,24 @@
 /* fonts */
 @font-face {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh7USSwiPHA.ttf)
-    format("truetype");
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh7USSwiPHA.ttf) format('truetype');
 }
 @font-face {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wWw.ttf)
-    format("truetype");
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
 }
 @font-face {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJfedw.ttf)
-    format("truetype");
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
 }
 /* 
 ====== 
@@ -67,7 +64,12 @@ Variables
 Global Styles 
 ======
 */
-* {
+html {
+  font-size: 100%;
+}
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -180,122 +182,6 @@ p {
   color: var(--clr-primary-1);
   background: var(--clr-primary-8);
 }
-/*
-=============== 
-Navbar
-===============
-*/
-/* add :not(.nav-logo) to img */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--clr-white);
-  box-shadow: var(--dark-shadow);
-  z-index: 2;
-}
-.nav-icons {
-  display: none;
-}
-.nav-center {
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-}
-.nav-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-.nav-toggle {
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 1.5rem;
-  color: var(--clr-primary-5);
-  cursor: pointer;
-  transition: var(--transition);
-}
-.nav-toggle:hover {
-  transform: scale(1.2);
-}
-.nav-link {
-  display: block;
-  padding: 1rem 2rem;
-  text-transform: capitalize;
-  letter-spacing: var(--spacing);
-  transition: var(--transition);
-  color: var(--clr-grey-1);
-  cursor: pointer;
-  font-size: 1rem;
-}
-.nav-link:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-8);
-  padding-left: 2.25rem;
-}
-/* nav toggle functionality */
-.nav-links {
-  height: 0;
-  overflow: hidden;
-  transition: var(--transition);
-}
-.show-links {
-  height: 280px;
-}
-/* nav at bigger screen size */
-@media screen and (min-width: 992px) {
-  /* hide nav toggle button */
-  .nav-toggle {
-    display: none;
-  }
-  /* show links */
-  .nav-links {
-    height: auto;
-    display: flex;
-  }
-  .nav-center {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* optional */
-    flex-wrap: wrap;
-  }
-  .nav-header {
-    padding: 0 0;
-  }
-  .nav-link {
-    padding: 0 0;
-  }
-  .nav-link:hover {
-    padding: 0;
-    color: var(--clr-primary-5);
-    background: transparent;
-  }
-  .nav-icons {
-    display: flex;
-  }
-  .navbar {
-    padding: 1rem 2rem;
-  }
-  .nav-link {
-    margin-right: 0.7rem;
-  }
-  .nav-icon {
-    margin-right: 0.7rem;
-    color: var(--clr-primary-5);
-    font-size: 1.2rem;
-    transition: var(--transition);
-  }
-  .nav-icon:hover {
-    color: var(--clr-primary-8);
-  }
-}
-/* set hero to 
-min-height:calc(100vh - 62px);
-*/
 /* Hero section */
 .hero {
   min-height: 100vh;
@@ -332,8 +218,7 @@ min-height:calc(100vh - 62px);
 }
 @media screen and (min-width: 768px) {
   .hero {
-    background: linear-gradient(#2caeba, rgba(0, 0, 0, 0.7)),
-      url("../images/main.jpeg") center / cover no-repeat;
+    background: linear-gradient(#2caeba, rgba(0, 0, 0, 0.7)), url("../images/main.jpeg") center / cover no-repeat;
   }
   .hero-banner {
     padding: 0;
@@ -654,3 +539,119 @@ Footer
   letter-spacing: var(--spacing);
   color: var(--clr-white);
 }
+/*
+=============== 
+Navbar
+===============
+*/
+/* add :not(.nav-logo) to img */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  z-index: 2;
+}
+.nav-icons {
+  display: none;
+}
+.nav-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.nav-toggle {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav-toggle:hover {
+  transform: scale(1.2);
+}
+.nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+  color: var(--clr-grey-1);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.nav-link:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+  padding-left: 2.25rem;
+}
+/* nav toggle functionality */
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 280px;
+}
+/* nav at bigger screen size */
+@media screen and (min-width: 992px) {
+  /* hide nav toggle button */
+  .nav-toggle {
+    display: none;
+  }
+  /* show links */
+  .nav-links {
+    height: auto;
+    display: flex;
+  }
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* optional */
+    flex-wrap: wrap;
+  }
+  .nav-header {
+    padding: 0 0;
+  }
+  .nav-link {
+    padding: 0 0;
+  }
+  .nav-link:hover {
+    padding: 0;
+    color: var(--clr-primary-5);
+    background: transparent;
+  }
+  .nav-icons {
+    display: flex;
+  }
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .nav-link {
+    margin-right: 0.7rem;
+  }
+  .nav-icon {
+    margin-right: 0.7rem;
+    color: var(--clr-primary-5);
+    font-size: 1.2rem;
+    transition: var(--transition);
+  }
+  .nav-icon:hover {
+    color: var(--clr-primary-8);
+  }
+}
+/* set hero to 
+min-height:calc(100vh - 62px);
+*/
