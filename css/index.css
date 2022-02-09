@@ -1,8 +1,4 @@
-/*
-=============== 
-Fonts
-===============
-*/
+/* fonts */
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -17,10 +13,10 @@ Fonts
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
 }
-/*
-=============== 
-Variables
-===============
+/* 
+====== 
+Variables 
+======
 */
 :root {
   /* dark shades of primary color*/
@@ -56,10 +52,10 @@ Variables
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-/*
-=============== 
-Global Styles
-===============
+/* 
+====== 
+Global Styles 
+======
 */
 * {
   margin: 0;
@@ -83,10 +79,6 @@ img:not(.nav-logo) {
   width: 100%;
   display: block;
 }
-/* img {
-  width: 100%;
-  display: block;
-} */
 h1,
 h2,
 h3,
@@ -135,26 +127,7 @@ p {
     line-height: 1;
   }
 }
-/*  global classes */
-.btn {
-  text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-white);
-  padding: 0.375rem 0.75rem;
-  letter-spacing: var(--spacing);
-  display: inline-block;
-  /* font-weight: 700; */
-  transition: var(--transition);
-  font-size: 0.875rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-.btn:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-8);
-}
-/* section */
+/* global classes */
 .section {
   padding: 5rem 0;
 }
@@ -178,11 +151,26 @@ p {
     width: 95vw;
   }
 }
-/*
-=============== 
-Hero
-===============
-*/
+/* buttons */
+.btn {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  font-size: 0.875rem;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  /* font-weight: 700; */
+  transition: var(--transition);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.btn:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+}
+/* Hero section */
 .hero {
   min-height: 100vh;
   background: var(--clr-primary-5);
@@ -227,14 +215,7 @@ Hero
     max-width: 45rem;
   }
 }
-/*
-=============== 
-About
-===============
-*/
-/* section added to globals */
-/* title added to globals */
-/* section center added to globals */
+/* About section */
 .about-img,
 .about-info {
   margin-bottom: 2rem;
@@ -244,17 +225,17 @@ About
     /* flex parent */
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
   }
   .about-img,
   .about-info {
     /* children */
     flex: 0 0 calc(50% - 2rem);
-    align-self: center;
     margin-bottom: 0;
   }
 }
 @media screen and (min-width: 1170px) {
+  /* ! before是添加第一个child，after是添加最后一个child, 两者有很大区别 */
   .about-img::before {
     content: "";
     position: absolute;
@@ -272,11 +253,7 @@ About
     position: relative;
   }
 }
-/*
-=============== 
-Services
-===============
-*/
+/* Services section */
 .services {
   background: var(--clr-grey-10);
 }
@@ -330,11 +307,7 @@ Services
     margin-bottom: 0.5rem;
   }
 }
-/*
-=============== 
-Featured Tours
-===============
-*/
+/* Featured section */
 .tour-card {
   transition: var(--transition);
   background: var(--clr-grey-10);
@@ -472,11 +445,7 @@ Contact
     max-width: 100%;
   }
 }
-/*
-=============== 
-Gallery
-===============
-*/
+/* Gallery section */
 .gallery-img-container {
   position: relative;
   background: var(--clr-primary-5);
