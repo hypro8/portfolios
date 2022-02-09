@@ -1,14 +1,30 @@
 /* fonts */
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
-
-// 如使用以下字体，则手机页面会被左右拨动！
-// @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins&display=swap");
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh7USSwiPHA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
+}
 /* 
 ====== 
 Variables 
 ======
 */
-
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(184, 91%, 17%);
@@ -43,42 +59,22 @@ Variables
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-// @primaryColor: #3fd0d4;
-// @mainWhite: #fff;
-// @offWhite: #f7f7f7;
-// @mainBlack: #222;
-// @mainGrey: #ececec;
-// @darkGrey: #afafaf;
-// @navBackgroundColor: #151821;
-// @navFontWhite: #fbf3c8;
-// @mainBackground: #ebeded;
-// @mainSpacing: 0.15rem;
-// @smallWidth: 88vw;
-// @lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.25);
-// @darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-// @fullWidth: 1170px;
-// @mainTransition: all 0.3s linear;
-
 /* 
 ====== 
 Global Styles 
 ======
 */
-
 html {
   font-size: 100%;
-  // equals to: font-size: 1rem (which is 16px by default)
 }
-* {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-  //   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-family: var(--ff-primary);
   background: var(--clr-white);
   color: var(--clr-grey-1);
@@ -95,7 +91,6 @@ img:not(.nav-logo) {
   width: 100%;
   display: block;
 }
-
 h1,
 h2,
 h3,
@@ -121,7 +116,6 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
-
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -145,37 +139,30 @@ p {
     line-height: 1;
   }
 }
-
 /* global classes */
 .section {
   padding: 5rem 0;
 }
-
 .section-title {
   text-align: center;
   margin-bottom: 4rem;
 }
-
 .section-title h2 {
   text-transform: uppercase;
 }
-
 .section-title span {
   color: var(--clr-primary-5);
 }
-
 .section-center {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
 }
-
 @media screen and (min-width: 992px) {
   .section-center {
     width: 95vw;
   }
 }
-
 /* buttons */
 .btn {
   display: inline-block;
@@ -195,9 +182,7 @@ p {
   color: var(--clr-primary-1);
   background: var(--clr-primary-8);
 }
-
 /* Hero section */
-
 .hero {
   min-height: 100vh;
   background: var(--clr-primary-5);
@@ -233,8 +218,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .hero {
-    background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
-      url("../images/main.jpeg") center/cover no-repeat;
+    background: linear-gradient(#2caeba, rgba(0, 0, 0, 0.7)), url("../images/main.jpeg") center / cover no-repeat;
   }
   .hero-banner {
     padding: 0;
@@ -243,14 +227,11 @@ p {
     max-width: 45rem;
   }
 }
-
 /* About section */
-
 .about-img,
 .about-info {
   margin-bottom: 2rem;
 }
-
 @media screen and (min-width: 992px) {
   .about-center {
     /* flex parent */
@@ -262,13 +243,10 @@ p {
   .about-info {
     /* children */
     flex: 0 0 calc(50% - 2rem);
-    // align-self: center;
     margin-bottom: 0;
   }
 }
-
 @media screen and (min-width: 1170px) {
-  // ! before vs after
   /* ! before是添加第一个child，after是添加最后一个child, 两者有很大区别 */
   .about-img::before {
     content: "";
@@ -280,9 +258,6 @@ p {
     top: -1.5rem;
     left: -1.5rem;
   }
-
-  // ! 定位后 z-index才有效
-  // ! 后一个子元素放置在前一个子元素之上
   .about-img {
     position: relative;
   }
@@ -290,7 +265,6 @@ p {
     position: relative;
   }
 }
-
 /* Services section */
 .services {
   background: var(--clr-grey-10);
@@ -312,7 +286,6 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-
 @media screen and (min-width: 576px) {
   .services-center {
     display: flex;
@@ -346,7 +319,6 @@ p {
     margin-bottom: 0.5rem;
   }
 }
-
 /* Featured section */
 .tour-card {
   transition: var(--transition);
@@ -423,7 +395,6 @@ p {
     flex: 0 0 calc(33.3333% - 2rem);
   }
 }
-
 /*
 =============== 
 Contact
@@ -486,7 +457,6 @@ Contact
     max-width: 100%;
   }
 }
-
 /* Gallery section */
 .gallery-img-container {
   position: relative;
@@ -558,7 +528,6 @@ Footer
 .footer-icon {
   font-size: 2rem;
   margin-right: 1rem;
-
   color: var(--clr-white);
   transition: var(--transition);
 }
@@ -570,14 +539,12 @@ Footer
   letter-spacing: var(--spacing);
   color: var(--clr-white);
 }
-
 /*
 =============== 
 Navbar
 ===============
 */
 /* add :not(.nav-logo) to img */
-
 .navbar {
   position: fixed;
   top: 0;
